@@ -117,7 +117,8 @@ even more examples of each command in action.
 
 Examples:
 
-        :I
+`:I`
+
                     Use ctrl-V to
         Original    Select, :I
            8            8
@@ -126,7 +127,8 @@ Examples:
            8            11
            8            12
 
-        :I -1
+`:I -1`
+
                     Use ctrl-V to
         Original    Select, :I -1
            8            8
@@ -135,8 +137,8 @@ Examples:
            8            5
            8            4
 
+`:II`
 
-        :II
                     Use ctrl-V to
         Original    Select, :II
            8             8
@@ -145,7 +147,8 @@ Examples:
            8            11
            8            12
 
-        :II -1
+`:II -1`
+
                     Use ctrl-V to
         Original    Select, :II -1
            8            8
@@ -154,8 +157,8 @@ Examples:
            8            5
            8            4
 
+`:IMDY`
 
-        :IMDY
                   Use ctrl-V to
         Original  Select, :IMDY
         06/10/03     6/10/03
@@ -164,8 +167,8 @@ Examples:
         06/10/03     6/13/03
         06/10/03     6/14/03
 
+`:IYMD`
 
-        :IYMD
                   Use ctrl-V to
         Original  Select, :IYMD
         03/06/10    03/06/10
@@ -174,10 +177,8 @@ Examples:
         03/06/10    03/06/13
         03/06/10    03/06/14
 
+`:IDMY`
 
-
-
-        :IDMY
                   Use ctrl-V to
         Original  Select, :IDMY
         10/06/03    10/06/03
@@ -186,8 +187,8 @@ Examples:
         10/06/03    13/06/03
         10/06/03    14/06/03
 
+`:ID`
 
-        :ID
                   Use ctrl-V to
         Original  Select, :ID
           Sun       Sun
@@ -196,8 +197,6 @@ Examples:
           Sun       Wed
           Sun       Thu
 
-
-        :ID
                   Use ctrl-V to
         Original  Select, :ID
          Sunday     Sunday
@@ -206,7 +205,8 @@ Examples:
          Sunday     Wednesday
          Sunday     Thursday
 
-        :IA
+`:IA`
+
                   Use ctrl-V to
         Original  Select, :IA
            a          a
@@ -215,7 +215,8 @@ Examples:
            a          d
            a          e
 
-        :IO
+`:IO`
+
                   Use ctrl-V to
         Original  Select, :IO
             5         5 
@@ -224,7 +225,8 @@ Examples:
             5         10
             5         11
 
-        :IR
+`:IR`
+
                   Use ctrl-V to
         Original  Select, :IR
            II         II
@@ -243,6 +245,6 @@ Examples:
 
 ## SEE ALSO
 
-vis     : vimscript#1195 : apply any ex command (ex. :s/../../) to a visual block
-vissort : vimtip#588     : how to sort a visual block (or sort based on one)
-visincr : http://mysite.verizon.net/astronaut/vim/index.html#VISINCR (for the latest, albeit experimental, release)
+- vis: vimscript#1195, apply any ex command (ex. :s/../../) to a visual block
+- vissort: vimtip#588, how to sort a visual block (or sort based on one)
+- visincr: http://mysite.verizon.net/astronaut/vim/index.html#VISINCR (for the latest, albeit experimental, release)
