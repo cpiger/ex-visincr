@@ -1,74 +1,118 @@
+# Intro
+
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=670
 
 The visincr plugin facilitates making a column of increasing or decreasing
 numbers, dates, or daynames.
 
-First, select a column using visual-block (ctrl-v) and move the cursor.
+## Requirements
+
+- Vim 7.0 or higher.
+
+## Installation
+
+This plugin follows the standard runtime path structure, and as such it can 
+be installed with a variety of plugin managers:
+    
+To install using [Vundle](https://github.com/gmarik/vundle):
+
+    # add this line to your .vimrc file
+    Bundle 'exvim/ex-visincr'
+
+To install using [Pathogen](https://github.com/tpope/vim-pathogen):
+
+    cd ~/.vim/bundle
+    git clone https://github.com/exvim/ex-visincr
+
+To install using [NeoBundle](https://github.com/Shougo/neobundle.vim):
+
+    # add this line to your .vimrc file
+    NeoBundle 'exvim/ex-visincr'
+
+[Download zip file](https://github.com/exvim/ex-visincr/archive/master.zip):
+
+    cd ~/.vim
+    unzip ex-visincr-master.zip
+    copy all of the files into your ~/.vim directory
+
+## Usage
+
+First, select a column using visual-block `ctrl-v` and move the cursor.
 
 Second, choose what sort of incremented list you want:
 
-    :I [#]  Will use the first line's number as a starting point to build
-            a column of increasing numbers (or decreasing numbers if the
-        increment is negative).
-        Default increment: 1
-        Justification    : left (will pad on the right)
+`:I [#]`  
 
-    :II [# [zfill]]  Will use the first line's number as a starting point
-        to build a column of increasing numbers (or decreasing numbers
-        if the increment is negative).
-        Default increment: 1
-        Justification    : right (will pad on the left)
-        Zfill            : left padding will be done with the given
-                           character, typically a zero.
+Will use the first line's number as a starting point to build a column 
+of increasing numbers (or decreasing numbers if the increment is negative).
 
-    :IYMD [#]    year/month/day
-    :IMDY [#]    month/day/year
-    :IDMY [#]    day/month/year
-        Will use the starting line's date to construct an increasing
-        or decreasing list of dates, depending on the sign of the
-        number.
-        Default increment: 1 (in days)
+- Default increment: 1
+- Justification: left (will pad on the right)
 
-    :ID [#] Will produce an increasing/decreasing list of daynames.  Three-letter
-            daynames will be used if the first day on the first line is a three
-        letter dayname; otherwise, full names will be used.
+`:II [# [zfill]]`  
 
-    :IO [#]
-    :IIO [#] [zfill]
-        Like :I and :II, except visincr creates octal numbers.
+Will use the first line's number as a starting point to build a column 
+of increasing numbers (or decreasing numbers if the increment is negative).
 
-    :IR [#]
-    :IIR [#] [zfill]
-        Like :I and :II, except visincr uses Roman numerals.  Negative and
-        zero counts are not supported for Roman numerals.
+- Default increment: 1
+- Justification: right (will pad on the left)
+- Zfill: left padding will be done with the given character, typically a zero.
 
-    :IX [#]
-    :IIX [#] [zfill]
-        Like :I and :II, except visincr creates hexadecimal numbers.
+`:IYMD [#]`    year/month/day
+`:IMDY [#]`    month/day/year
+`:IDMY [#]`    day/month/year
 
-    -------------------
-    EXTRA NOTES
-    -------------------
-    For :I :II :IO :IIO :IR :IIR :
-        If the visual block is ragged on the right-hand side (as can
-        easily happen when the "$" is used to select the
-        right-hand-side), the block will have spaces appended to
-        straighten it out.  If the string length of the count exceeds
-        the visual-block, then additional spaces will be inserted as
-        needed.  Leading tabs are handled by using virtual column
-        calculations.
+Will use the starting line's date to construct an increasing
+or decreasing list of dates, depending on the sign of the
+number.
 
-    For :IR and :IIR :
-        Since Roman numerals vary considerably in their lengths for
-        nearby numbers, an additional two spaces will be included.
+- Default increment: 1 (in days)
 
-    For :IYMD, :IMDY, and IDMY:
-        You'll need the <calutil.vim> plugin, available as
-        "Calendar Utilities" under the following url:
+`:ID [#]` 
 
-        http://mysite.verizon.net/astronaut/vim/index.html#CALUTIL
+Will produce an increasing/decreasing list of daynames. Three-letter 
+daynames will be used if the first day on the first line is a three letter 
+dayname; otherwise, full names will be used.
 
-Help is included, too -- check out  :he visincr-examples to see
+`:IO [#]`
+`:IIO [#] [zfill]`
+
+Like :`I` and `:II`, except visincr creates octal numbers.
+
+`:IR [#]`
+`:IIR [#] [zfill]`
+
+Like `:I` and `:II`, except visincr uses Roman numerals. Negative and
+zero counts are not supported for Roman numerals.
+
+`:IX [#]`
+`:IIX [#] [zfill]`
+
+Like `:I` and `:II`, except visincr creates hexadecimal numbers.
+
+### EXTRA NOTES
+
+For `:I`, `:II`, `:IO`, `:IIO`, `:IR` and `:IIR`
+
+If the visual block is ragged on the right-hand side (as can
+easily happen when the "$" is used to select the right-hand-side), 
+the block will have spaces appended to straighten it out.  If the string 
+length of the count exceeds the visual-block, then additional spaces will be inserted as
+needed.  Leading tabs are handled by using virtual column calculations.
+
+For `:IR` and `:IIR`
+
+Since Roman numerals vary considerably in their lengths for
+nearby numbers, an additional two spaces will be included.
+
+For `:IYMD`, `:IMDY` and `IDMY`
+
+You'll need the <calutil.vim> plugin, available as
+"Calendar Utilities" under the following url:
+
+http://mysite.verizon.net/astronaut/vim/index.html#CALUTIL
+
+Help is included, too -- check out  `:help visincr-examples` to see
 even more examples of each command in action.
 
 Examples:
@@ -197,10 +241,8 @@ Examples:
             8         b
             8         c
 
+## SEE ALSO
 
--------------
-SEE ALSO
--------------
 vis     : vimscript#1195 : apply any ex command (ex. :s/../../) to a visual block
 vissort : vimtip#588     : how to sort a visual block (or sort based on one)
 visincr : http://mysite.verizon.net/astronaut/vim/index.html#VISINCR (for the latest, albeit experimental, release)
